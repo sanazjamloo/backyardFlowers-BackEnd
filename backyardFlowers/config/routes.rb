@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :flowers, only: [:create, :show, :index, :update, :destroy]
   collection do
     post '/login', to: 'users#login'
+    end
   end
-end
 end
 
 #Prefix Verb   URI Pattern                           Controller#Action
