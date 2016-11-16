@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::API
+
   def authenticate
-     render json: {status: 401, message: "nope, sorry"} unless decode_token(bearer_token)
+     render json: {status: 401, message: 'Nope, Sorry'} unless decode_token(bearer_token)
    end
 
    def bearer_token
@@ -18,6 +19,6 @@ class ApplicationController < ActionController::API
    def decode_token(token)
      token = JWT.decode(token, nil, false)
    rescue
-     render json: {status: 401, message: 'invalid or expired token'}
+     render json: {status: 401, message: 'Invalid or Expired Token'}
    end
 end

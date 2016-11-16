@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_action :authenticate, except: [:login, :create]
+  before_action :set_user, only: [:show, :destroy]
 
-  def set_users
+  def set_user
     @user = User.find(params[:id])
   end
-
 
   def create
     user = User.new(user_params)
@@ -21,13 +21,11 @@ class UsersController < ApplicationController
   end
 
   def show
-   user = User.find(params[:id])
-   render json: {status: 200, user: user}
+   render json: {status: 200, user: @user}
   end
 
   def destroy
-    user = User.find(params[:id])
-    user.destroy
+    @user.destroy
     render json: {status: 204}
   end
 
@@ -40,8 +38,6 @@ class UsersController < ApplicationController
        render json: {status: 401, message: "Unauthorized"}
      end
    end
-
-
 
 
   private
