@@ -1,24 +1,14 @@
-# README
+# Backyard Flowers - Back-End
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Final project
 
-Things you may want to cover:
+- Using Ruby and Rails as back-end technology and Angular JS as front-end.
+- This application will allow users to keep track of their flowers.
 
-* Ruby version
+- Link to Heroku :
 
-* System dependencies
+- Link to Github repository: https://github.com/sanazjamloo/backyardFlowers-BackEnd/tree/master/backyardFlowers
 
-* Configuration
+- Link to front-end Heroku:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Link to front-end Github repository: 
