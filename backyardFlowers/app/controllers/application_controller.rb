@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
   def authenticate
-     render json: {status: 401, message: "nahh, sorry"} unless decode_token(bearer_token)
+     render json: {status: 401, message: "nope, sorry"} unless decode_token(bearer_token)
    end
 
    def bearer_token
