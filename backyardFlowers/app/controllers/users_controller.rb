@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate, except: [:login, :create]
 
   def set_users
     @user = User.find(params[:id])
@@ -22,8 +23,13 @@ class UsersController < ApplicationController
   def show
    user = User.find(params[:id])
    render json: {status: 200, user: user}
- end
+  end
 
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    render json: {status: 204}
+  end
 
    def login
      user = User.find_by(username: params[:user][:username])
