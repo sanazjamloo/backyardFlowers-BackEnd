@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate, except: [:login, :create]
+  # before_action :authenticate, except: [:login, :create]
   before_action :set_user, only: [:show, :destroy]
 
   def set_user
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user 
    render json: {status: 200, user: @user}
   end
 
